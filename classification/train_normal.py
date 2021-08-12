@@ -34,13 +34,19 @@ parser.add_argument('--fold', type=str, default="2")
 parser.add_argument('--v2_size', type=str, default="l")
 parser.add_argument('--batch_size', type=int, default=5*6)
 parser.add_argument('--bin', type=bool, default=False)
-parser.add_argument('--data_root', type=str, default="/home")
+parser.add_argument('--data_root', type=str, default="SIIM-FISABIO-RSNA-COVID-19-Detection")
+parser.add_argument('--dcm_folds_train', type=str, default="/dcm_folds/data_train_dcm_fold0.pickle")
+parser.add_argument('--dcm_folds_val', type=str, default="/dcm_folds/data_val_dcm_fold0.pickle")
 
 args = parser.parse_args()
 
 data_root = args.data_root
 
 transform = data_transforms0
+
+dcm_folds_path_train
+
+dcm_folds_path_val
 
 if args.v2_size == "l":
     model = Net_v2l()
@@ -67,7 +73,7 @@ lr = 3e-4
 
 optimizer_ft = optim.Adam(model.parameters(), lr=lr, weight_decay=5e-5)
 
-image_datasets = {x: CustomDataset(transforms[x], x, args.fold, data_root) for x in ['train', 'val']}
+image_datasets = {x: CustomDataset(transforms[x], x, data_root, dcm_folds_path_train, dcm_folds_path_val) for x in ['train', 'val']}
 
 
 dataloaders_dict = {"train":
