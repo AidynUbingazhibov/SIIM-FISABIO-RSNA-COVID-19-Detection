@@ -23,3 +23,16 @@ Binary classifiers were trained in the same manner as study level models, 3 fold
 ## Augmentations:
 
 Our augmentations include HorizontalFlip, RandomCrop (for study level), ShiftScaleRotate, CLAHE, RandomGamma, Cutout from albumentations library (https://albumentations.ai/ ).
+
+## How to run detector:
+
+1) Change the paths to your dcm pickle files in the config files for universeNet and detectoRS.
+2) The detector can be trained as follows:
+
+./tools/dist_train.sh ${CONFIG_FILE} ${GPU_NUM}
+
+## How to run classifier:
+
+1) To train classifier run train_normal.py. To change the data root, the dcm pickle files, and the fold number use --data_root, --dcm_folds_train, dcm_folds_val, and --fold. The auxilary branches can be changed as well via --aux. For example:
+
+CUDA_VISIBLE_DEVICES=0,2,3,4 python train_normal.py --scheduler plateau --fold 0 --aux 5678 --v2_size m --batch_size 32 --dcm_folds_train --data_root SIIM-FISABIO-RSNA-COVID-19-Detection /dcm_folds/data_train_dcm_fold0.pickle --dcm_folds_val /dcm_folds/data_val_dcm_fold0.pickle
