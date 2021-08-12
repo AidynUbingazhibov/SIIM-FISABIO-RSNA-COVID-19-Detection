@@ -27,7 +27,7 @@ Our augmentations include HorizontalFlip, RandomCrop (for study level), ShiftSca
 ## How to run detector:
 
 1) Change the paths to your dcm pickle files in the config files for universeNet and detectoRS.
-2) The detector can be trained as follows:
+2) The detector can be trained inside the folder UniverseNet as follows:
 
 ./tools/dist_train.sh ${CONFIG_FILE} ${GPU_NUM}
 
