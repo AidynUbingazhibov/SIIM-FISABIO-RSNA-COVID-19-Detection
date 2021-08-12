@@ -50,12 +50,17 @@ def data_transforms0():
 
 
 class CustomDataset(Dataset):
-    def __init__(self, transform, split, fold, data_root):
+    def __init__(self, transform, split, data_root, dcm_folds_path_train, dcm_folds_path_val):
         self.transform = transform
         self.data_root = data_root
         self.split = split
-
-        with open(f"/path/to/dcm_folds/data_{split}_dcm_fold{fold}.pickle", "rb") as f:
+        
+        if self.split == "train":
+            dcm_path = dcm_folds_path_train
+        else:
+            dcm_path = dcm_folds_path_val
+            
+        with open(dcm_path, "rb") as f:
             self.bbox_data = pickle.load(f)
 
         self.classes = []
