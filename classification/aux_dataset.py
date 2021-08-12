@@ -55,7 +55,7 @@ class CustomDataset(Dataset):
         self.data_root = data_root
         self.split = split
 
-        with open(f"/data/zhan/compets/siim_covid/input/dcm_folds/data_{split}_dcm_fold{fold}.pickle", "rb") as f:
+        with open(f"/path/to/dcm_folds/data_{split}_dcm_fold{fold}.pickle", "rb") as f:
             self.bbox_data = pickle.load(f)
 
         self.classes = []
