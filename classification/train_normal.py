@@ -34,10 +34,11 @@ parser.add_argument('--fold', type=str, default="2")
 parser.add_argument('--v2_size', type=str, default="l")
 parser.add_argument('--batch_size', type=int, default=5*6)
 parser.add_argument('--bin', type=bool, default=False)
+parser.add_argument('--data_root', type=str, default="/home")
 
 args = parser.parse_args()
 
-data_root = "path to input"
+data_root = args.data_root
 
 transform = data_transforms0
 
