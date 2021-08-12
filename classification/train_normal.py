@@ -37,7 +37,7 @@ parser.add_argument('--bin', type=bool, default=False)
 
 args = parser.parse_args()
 
-data_root = "/data/zhan/compets/siim_covid/input/"
+data_root = "path to input"
 
 transform = data_transforms0
 
