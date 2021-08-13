@@ -1,4 +1,4 @@
-# SIIM-FISABIO-RSNA-COVID-19-Detection 7th place solution
+# [SIIM-FISABIO-RSNA-COVID-19-Detection](https://www.kaggle.com/c/siim-covid19-detection) 7th place solution
 
 ## Validation:
 
