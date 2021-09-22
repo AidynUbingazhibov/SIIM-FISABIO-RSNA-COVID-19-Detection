@@ -8,7 +8,7 @@ We used iterative-stratification with 5 folds (https://github.com/trent-b/iterat
 
 We used efficientnet-b7, v2s, v2m, and v2l with aux branches after 3 different blocks. The models were trained on 3 folds and on different image resolutions (512, 640, 768) to produce 14 classifiers.
 
-We used simple averaging for ensembling the models. LB mAP for study level was **~41.5-41.6**
+We used simple averaging for ensembling the models. LB mAP for study level was **~62.3-62.4**
 
 ## Image level:
 
