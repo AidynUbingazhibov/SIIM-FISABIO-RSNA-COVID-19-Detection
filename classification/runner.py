@@ -92,63 +92,7 @@ def train_model(model, dataloaders, criterion, optimizer, fold, aux, penalize, n
                     elif aux == "56":
                         loss = criterion[0](outputs, labels) + 3 * (
                                     criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
-                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()))
-                    elif aux == "25":
-                        loss = criterion[0](outputs, labels) + 3 * (
-                                    criterion[1](seg_mask0.squeeze().squeeze(), gt_segs0.squeeze()) +
-                                    criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()))
-                    elif aux == "5678":
-                        loss = criterion[0](outputs, labels) + 3*(
-                                    criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
-                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()) +
-                                    criterion[1](seg_mask3.squeeze().squeeze(), gt_segs2.squeeze()) +
-                                    criterion[1](seg_mask4.squeeze().squeeze(), gt_segs2.squeeze()))
-                    elif aux == "2567":
-                        loss = criterion[0](outputs, labels) + 8 * (
-                                    criterion[1](seg_mask0.squeeze().squeeze(), gt_segs0.squeeze()) +
-                                    criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
-                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()) +
-                                    criterion[1](seg_mask3.squeeze().squeeze(), gt_segs2.squeeze()))
-                    elif aux == "256":
-                        loss = criterion[0](outputs, labels) + 3 * (
-                                    criterion[1](seg_mask0.squeeze().squeeze(), gt_segs0.squeeze()) +
-                                    criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
-                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()))
-                    elif aux == "25678":
-                        loss = criterion[0](outputs, labels) + 3 * (
-                                    criterion[1](seg_mask0.squeeze().squeeze(), gt_segs0.squeeze()) +
-                                    criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
-                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()) +
-                                    criterion[1](seg_mask3.squeeze().squeeze(), gt_segs2.squeeze()) +
-                                    criterion[1](seg_mask4.squeeze().squeeze(), gt_segs2.squeeze()))
-                    elif aux == "24567":
-                        loss = criterion[0](outputs, labels) + 3 * (
-                                    criterion[1](seg_mask0.squeeze().squeeze(), gt_segs0.squeeze()) +
-                                    criterion[1](seg_mask01.squeeze().squeeze(), gt_segs01.squeeze()) +
-                                    criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
-                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()) +
-                                    criterion[1](seg_mask3.squeeze().squeeze(), gt_segs2.squeeze()))
-                    elif aux == "245678":
-                        loss = criterion[0](outputs, labels) + 3 * (
-                                    criterion[1](seg_mask0.squeeze().squeeze(), gt_segs0.squeeze()) +
-                                    criterion[1](seg_mask01.squeeze().squeeze(), gt_segs01.squeeze()) +
-                                    criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
-                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()) +
-                                    criterion[1](seg_mask3.squeeze().squeeze(), gt_segs2.squeeze()) +
-                                    criterion[1](seg_mask4.squeeze().squeeze(), gt_segs2.squeeze()))
-
-                    elif aux == "5":
-                        loss = criterion[0](outputs, labels) + 3 * (criterion[1](seg_mask1.squeeze().squeeze().float(), gt_segs1.squeeze().float()))
-                    elif aux == "2":
-                        loss = criterion[0](outputs, labels) + 3 * (criterion[1](seg_mask0.squeeze().squeeze().float(), gt_segs0.squeeze().float()))
-                    elif aux == "6":
-                        loss = criterion[0](outputs, labels) + 3 * (criterion[1](seg_mask2.squeeze().squeeze().float(), gt_segs1.squeeze().float()))
-                    elif aux == "7":
-                        loss = criterion[0](outputs, labels) + 3 * (criterion[1](seg_mask3.squeeze().squeeze().float(), gt_segs2.squeeze().float()))
-                    elif aux == "57":
-                        loss = criterion[0](outputs, labels) + 3 * (criterion[1](seg_mask2.squeeze().squeeze().float(), gt_segs1.squeeze().float()) + criterion[1](seg_mask3.squeeze().squeeze().float(), gt_segs2.squeeze().float()))
-                    else:
-                        loss = criterion[0](outputs, labels)
+                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()))                    
 
                     _, preds = torch.max(outputs, 1)
 
