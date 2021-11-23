@@ -88,11 +88,12 @@ def train_model(model, dataloaders, criterion, optimizer, fold, aux, penalize, n
                         loss = criterion[0](outputs, labels) + 3 * (criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
                                                                     criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()) +
                                                                     criterion[1](seg_mask3.squeeze().squeeze(), gt_segs2.squeeze()))
-                        #loss = criterion[0](outputs, labels)
                     elif aux == "56":
                         loss = criterion[0](outputs, labels) + 3 * (
                                     criterion[1](seg_mask1.squeeze().squeeze(), gt_segs1.squeeze()) +
-                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()))                    
+                                    criterion[1](seg_mask2.squeeze().squeeze(), gt_segs2.squeeze()))
+                    else:
+                        loss = criterion[0](outputs, labels)
 
                     _, preds = torch.max(outputs, 1)
 
